@@ -1,1 +1,27 @@
-#0 emit transaction failed: error_class=IOError error="closed stream" location="/opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/buffer/file_chunk.rb:82:in `pos'"
+unexpected error during consuming events from kafka. Re-fetch events. error="closed stream"
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/buffer/file_chunk.rb:82:in `pos'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/buffer/file_chunk.rb:82:in `rollback'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/buffer.rb:394:in `rescue in block in write'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/buffer.rb:387:in `block in write'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/buffer.rb:386:in `each'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/buffer.rb:386:in `write'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/output.rb:1050:in `block in handle_stream_simple'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/output.rb:932:in `write_guard'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/output.rb:1049:in `handle_stream_simple'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/output.rb:922:in `execute_chunking'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/output.rb:852:in `emit_buffered'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/out_copy.rb:72:in `block in process'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/out_copy.rb:67:in `each'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/out_copy.rb:67:in `each_with_index'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/out_copy.rb:67:in `process'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/multi_output.rb:184:in `emit_sync'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/event_router.rb:196:in `emit_events'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/event_router.rb:115:in `emit_stream'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluent-plugin-kafka-0.18.1/lib/fluent/plugin/in_rdkafka_group.rb:287:in `emit_events'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluent-plugin-kafka-0.18.1/lib/fluent/plugin/in_rdkafka_group.rb:269:in `block in run'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluent-plugin-kafka-0.18.1/lib/fluent/plugin/in_rdkafka_group.rb:214:in `each_batch'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluent-plugin-kafka-0.18.1/lib/fluent/plugin/in_rdkafka_group.rb:229:in `run'
+  2023-03-02 14:44:03 +0530 [error]: #0 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin_helper/thread.rb:78:in `block in thread_create'
+2023-03-02 14:44:03 +0530 [warn]: #0 Stopping Consumer
+2023-03-02 14:44:03 +0530 [warn]: #0 Could not connect to broker. retry_time:1. Next retry will be in 30 seconds
+2023-03-02 14:44:33 +0530 [warn]: #0 Re-starting consumer 2023-03-02 14:44:33 +0530
