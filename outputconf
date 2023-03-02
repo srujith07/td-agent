@@ -1,0 +1,32 @@
+<match your_log_match>
+  @type elasticsearch
+
+  # Elasticsearch server information
+  host elasticsearch_server.example.com
+  port 9200
+
+  # Set the maximum number of retries when a request fails
+  request_retries 5
+
+  # Set the time to wait between retries (in seconds)
+  request_retry_interval 5
+
+  # Set the time to wait before a request times out (in seconds)
+  request_timeout 60
+
+  # Set the size of the Elasticsearch bulk request (in bytes)
+  flush_size 26214400  # 25MB
+
+  # Set the time to wait before sending a partial request (in seconds)
+  flush_interval 60    # 1 minute
+
+  # Set the maximum number of retries for network errors
+  network_retries 5
+
+  # Set the time to wait between network retries (in seconds)
+  network_retry_interval 1
+
+  # Set the Elasticsearch index and document type
+  index_name your_index_name
+  type_name your_document_type
+</match>
