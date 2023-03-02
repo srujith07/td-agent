@@ -1,3 +1,1 @@
-buffer flush took longer time than slow_flush_log_threshold: elapsed_time=153.42236618325114 slow_flush_log_threshold=20.0 plugin_id="object:9ec
-
-Mar  2 13:03:27 dc1cpvelkfld003 kernel: [18752966.684194] Memory cgroup out of memory: Killed process 1699349 (ruby) total-vm:3821560kB, anon-rss:3073484kB, file-rss:11516kB, shmem-rss:0kB, UID:0 pgtables:6524kB oom_score_adj:0
+#0 emit transaction failed: error_class=IOError error="closed stream" location="/opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin/buffer/file_chunk.rb:82:in `pos'"
