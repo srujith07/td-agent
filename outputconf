@@ -1,32 +1,41 @@
-<match your_log_match>
+<match mykafkatopic**>
   @type elasticsearch
-
-  # Elasticsearch server information
-  host elasticsearch_server.example.com
-  port 9200
-
-  # Set the maximum number of retries when a request fails
-  request_retries 5
-
-  # Set the time to wait between retries (in seconds)
-  request_retry_interval 5
-
-  # Set the time to wait before a request times out (in seconds)
-  request_timeout 60
-
-  # Set the size of the Elasticsearch bulk request (in bytes)
-  flush_size 26214400  # 25MB
-
-  # Set the time to wait before sending a partial request (in seconds)
-  flush_interval 60    # 1 minute
-
-  # Set the maximum number of retries for network errors
-  network_retries 5
-
-  # Set the time to wait between network retries (in seconds)
-  network_retry_interval 1
-
-  # Set the Elasticsearch index and document type
-  index_name your_index_name
-  type_name your_document_type
+  @log_level info
+  hosts elastic1:9200,elastic2:9200,elastic3:9200
+  scheme https
+  ca_file /etc/td-agent/certs/ca.crt
+  client_cert /etc/td-agent/certs/my.crt
+  client_key /etc/td-agent/certs/my.key
+  ssl_verify true
+  user elastic
+  password "#{ENV['PASSWORD']}"
+  id_key kubernetes_rand_key
+  remove_keys kubernetes_rand_key
+  #write_operation create
+  request_timeout 600s
+  logstash_format false
+  index_name kubernetes
+  logstash_dateformat %Y-%m-%d
+  include_timestamp true
+  reconnect_on_error true
+  reload_on_failure true
+  log_es_400_reason true
+  reload_connections false
+  compression_level best_compression
+  slow_flush_log_threshold 1000.0
+  bulk_message_request_threshold 100000
+  <buffer>
+    @type file
+    path /etc/td-agent/buffer/unified/kubernetes-user-buffer-hdc.*.
+    flush_mode interval
+    flush_interval 10s
+    flush_thread_count 4
+    chunk_limit_size 500m
+    retry_forever true
+    retry_timeout 168h
+    retry_type periodic
+    retry_wait 900s
+    total_limit_size 500m
+    overflow_action block
+  </buffer>
 </match>
