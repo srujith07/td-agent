@@ -25,3 +25,23 @@ unexpected error during consuming events from kafka. Re-fetch events. error="clo
 2023-03-02 14:44:03 +0530 [warn]: #0 Stopping Consumer
 2023-03-02 14:44:03 +0530 [warn]: #0 Could not connect to broker. retry_time:1. Next retry will be in 30 seconds
 2023-03-02 14:44:33 +0530 [warn]: #0 Re-starting consumer 2023-03-02 14:44:33 +0530
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2023-03-10 13:01:57 +0530 [error]: #1 unexpected error during consuming events from kafka. Re-fetch events. error="Local: Maximum application poll interval (max.poll.interval.ms) exceeded (max_poll_exceeded)"
+  2023-03-10 13:01:57 +0530 [error]: #1 /opt/td-agent/lib/ruby/gems/2.7.0/gems/rdkafka-0.11.1/lib/rdkafka/consumer.rb:432:in `poll'
+  2023-03-10 13:01:57 +0530 [error]: #1 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluent-plugin-kafka-0.18.1/lib/fluent/plugin/in_rdkafka_group.rb:209:in `each_batch'
+  2023-03-10 13:01:57 +0530 [error]: #1 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluent-plugin-kafka-0.18.1/lib/fluent/plugin/in_rdkafka_group.rb:229:in `run'
+  2023-03-10 13:01:57 +0530 [error]: #1 /opt/td-agent/lib/ruby/gems/2.7.0/gems/fluentd-1.15.2/lib/fluent/plugin_helper/thread.rb:78:in `block in thread_create'
