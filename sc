@@ -10,3 +10,9 @@
 {namespace="sla03"} | regexp "(?P<status>\\w+)\\s*{app=.(?P<app_name>\\w+).}\\s*(?P<result>\\d+)" | result >= 1
 
 Note: don't use timestamp in regex
+
+count_over_time({namespace="sla03"} | regexp "(?P<status>\\w+)\\s*{app=.(?P<app_name>\\w+).}\\s*(?P<result>\\d+)" | result = 0 [1m] )
+
+sum(count_over_time({namespace="sla03"} | regexp "(?P<status>\\w+)\\s*{app=.(?P<app_name>\\w+).}\\s*(?P<result>\\d+)" | result = 1 [1m] )) by (app_name)
+
+sum(count_over_time({namespace="sla03"} | regexp "(?P<status>\\w+)\\s*{app=.(?P<app_name>\\w+).}\\s*(?P<result>\\d+)" | app_name ="gitlab" | result = 1 [1m] )) by (app_name)
